@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  blazor-client:
+    build: 
+      context: .
+      dockerfile: ./Blazor-example2.Client/Dockerfile
+    ports:
+      - "8001:80"
+    environment:
+      API_URL: http://blazor-server:80
+    networks: 
+    - front
+    - back  
+
+  blazor-server:
+    build: 
+      context: .
+      dockerfile: ./Blazor-example2.Server/Dockerfile
+    networks:
+      - back
+
+
+networks:
+  front:
+  back:
+      
+ 

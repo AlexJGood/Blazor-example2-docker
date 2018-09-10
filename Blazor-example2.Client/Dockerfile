@@ -33,5 +33,5 @@ COPY --from=build /src/Blazor-example2.Client/appdist /usr/share/nginx/html
 
 COPY --from=build /src/Blazor-example2.Client/nginx.conf /etc/nginx/nginx.conf
 
-ENV API_URL=http://blazor-server:10000/
+ENV API_URL=http://blazor-server:9001/
 
